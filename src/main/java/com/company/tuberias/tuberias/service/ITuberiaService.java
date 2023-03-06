@@ -5,4 +5,5 @@ import org.springframework.http.ResponseEntity;
 
 public interface ITuberiaService {
     public ResponseEntity<TuberiaResponseRest> search();
+    public ResponseEntity<TuberiaResponseRest> searchById(Long id);
 }

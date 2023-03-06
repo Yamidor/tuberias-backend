@@ -5,6 +5,7 @@ import com.company.tuberias.tuberias.service.ITuberiaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,12 @@ public class TuberiaController {
     @GetMapping("/tuberias")
     public ResponseEntity<TuberiaResponseRest> searchTuberias(){
         ResponseEntity<TuberiaResponseRest> response = service.search();
+        return response;
+    }
+
+    @GetMapping("/tuberias/{id}")
+    public ResponseEntity<TuberiaResponseRest> searchTuberiasById(@PathVariable Long id){
+        ResponseEntity<TuberiaResponseRest> response = service.searchById(id);
         return response;
     }
 }
